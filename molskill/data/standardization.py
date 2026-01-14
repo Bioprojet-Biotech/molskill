@@ -28,9 +28,9 @@ def get_population_moments(
     returns:
         Dict[str, np.ndarray]: population {mean: np.ndarray, std: np.ndarray}
     """
-
+ 
     if moment_csv is None:
-        LOGGER.info("Standardization moments not found. Downloading from remote...")
+        LOGGER.info(f"Standardization moments not found. Downloading from remote to {MOMENT_CSV}...")
         moment_csv = MOMENT_CSV
         os.makedirs(ASSET_PATH, exist_ok=True)
         download(DEFAULT_MOMENTS_REMOTE, moment_csv)
